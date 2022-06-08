@@ -1,6 +1,8 @@
 import { AttachFile, MoreVert, SearchOutlined } from '@mui/icons-material';
 import { Avatar, IconButton } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
+import MicIcon from '@mui/icons-material/Mic';
 import './Chat.css'
 const Chat = () => {
     const [seed, setSeed] = useState("");
@@ -17,22 +19,32 @@ const Chat = () => {
                     <p>Last seen at ...</p>
                 </div>
                 <div className="chat__headerRight">
-                <IconButton>
-                        <SearchOutlined/>
+                    <IconButton>
+                        <SearchOutlined />
                     </IconButton>
                     <IconButton>
-                        <AttachFile/>
+                        <AttachFile />
                     </IconButton>
                     <IconButton>
-                        <MoreVert/>
+                        <MoreVert />
                     </IconButton>
                 </div>
             </div>
             <div className="chat__body">
+                <p className={`chat__massage ${true && 'chat__recever'}`}>
+                    <span className='chat__name'>Sonny Sanga</span>
+                    Hey guys
+                <span className='chat__timestamp'>3:52pm</span>
+                </p>
 
             </div>
             <div className="chat__footer">
-
+                <InsertEmoticonIcon />
+                <form>
+                    <input placeholder='Type a message' type="text" />
+                    <button>Send a Message</button>
+                </form>
+                <MicIcon/>
             </div>
         </div>
     );
